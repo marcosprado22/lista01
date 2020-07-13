@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+
+<h:head>
+
+</h:head> 
+<h:body> 
+
+	<h:form>	
+		<p:growl globalOnly="true"/>
+		
+		<p:panel header="Calcule o consumo médio de combustível" style="width: 800px">
+		
+		<p:panelGrid columns="3">
+		
+			<p:outputLabel for="t1" value="Tempo" />
+			<p:inputNumber id="t1" value="#{consumoBean.tempo}"/>
+			<p:message for="t1"/>
+			
+			<p:outputLabel for="v1" value="Velocidade Média" />
+			<p:inputNumber id="v1" value="#{consumoBean.velocidadeMedia}"/>
+			<p:message for="v1"/>
+			
+			
+			
+		</p:panelGrid>
+	
+			<p:commandButton value="Calcular" action="#{consumoBean.calcular()}" update="@form"/>
+			
+		</p:panel>
+	</h:form>
+	
+</h:body>
+</html>

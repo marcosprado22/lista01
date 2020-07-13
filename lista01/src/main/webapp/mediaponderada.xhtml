@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+
+<h:head>
+   <title>Calcule a média ponderada das notas</title>
+	<script type="text/javascript" />
+
+</h:head> 
+<h:body> 
+
+	<h:form>	
+		<p:growl globalOnly="true"/>
+		
+		
+		<p:panel header="Calcule a média ponderada das notas" style="width: 800px">
+
+			<p:panelGrid columns="3">
+				
+			<p:outputLabel for="mp1" value="nota1" />
+			<p:inputNumber id="mp1" value="#{mediaPonderadaBean.nota1}"/>
+			<p:message for="mp1"/>
+			<p:outputLabel for="p1" value="peso1" />
+			<p:inputNumber id="p1" value="#{mediaPonderadaBean.peso1}"/>
+			<p:message for= "p1"/>
+			
+			<p:outputLabel for="mp2" value="nota2" />
+			<p:inputNumber id="mp2" value="#{mediaPonderadaBean.nota2}"/>
+			<p:message for="mp2"/>
+			<p:outputLabel for="p2" value="peso2" />
+			<p:inputNumber id="p2" value="#{mediaPonderadaBean.peso2}"/>
+			<p:message for= "p2"/>
+			
+			<p:outputLabel for="mp3" value="nota3" />
+			<p:inputNumber id="mp3" value="#{mediaPonderadaBean.nota3}"/>
+			<p:message for="mp3"/>
+			<p:outputLabel for="p3" value="peso3" />
+			<p:inputNumber id="p3" value="#{mediaPonderadaBean.peso3}"/>
+			<p:message for= "p3"/>
+			
+			</p:panelGrid>
+	
+			<p:commandButton value="Calcular" action="#{mediaPonderadaBean.calcular()}" update="@form"/>
+			
+		</p:panel>
+	</h:form>
+	
+</h:body>
+</html>

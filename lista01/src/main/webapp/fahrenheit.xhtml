@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+
+<h:head>
+
+</h:head> 
+<h:body> 
+
+	<h:form>	
+		<p:growl globalOnly="true"/>
+		
+		<p:panel header="Converta a temperatura de Celsius para Fahrenheit" style="width: 800px">
+		
+		<p:panelGrid columns="3">
+		
+			<p:outputLabel for="t1" value="Celsius" />
+			<p:inputNumber id="t1" value="#{fahrenheitBean.celsius}"/>
+			<p:message for="t1"/>
+			
+			
+			
+		</p:panelGrid>
+	
+			<p:commandButton value="Calcular" action="#{fahrenheitBean.calcular()}" update="@form"/>
+			
+		</p:panel>
+	</h:form>
+	
+</h:body>
+</html>

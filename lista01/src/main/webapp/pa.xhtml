@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+	<title>Calculo de Enésimo termo da PA</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+	
+		<p:growl globalOnly="true"/>
+
+		<p:panel header="Cálculo do enésimo termo da PA" closable="true" toggleable="true" >
+
+			<h:panelGrid columns="3">
+
+				<p:outputLabel for="n1" value="a1:" />
+				<p:inputNumber id="n1" value="#{pABean.a1}" decimalPlaces="3"
+					decimalSeparator="," thousandSeparator="." />
+				<p:message for="n1" />
+
+				<p:outputLabel for="n2" value="n:" />
+				<p:inputNumber id="n2" value="#{pABean.n}" decimalPlaces="0"
+					decimalSeparator="," thousandSeparator="." />
+				<p:message for="n2" />
+
+				<p:outputLabel for="n3" value="r:" />
+				<p:inputNumber id="n3" value="#{pABean.r}" decimalPlaces="3"
+					decimalSeparator="," thousandSeparator="." />
+				<p:message for="n3" />
+
+			</h:panelGrid>
+			
+			<f:facet name="footer">
+				
+				<p:commandButton value="Calcular" action="#{pABean.calcular()}" update="@form"/>
+				
+			</f:facet>
+			
+		</p:panel>
+
+	</h:form>
+
+</h:body>
+</html>

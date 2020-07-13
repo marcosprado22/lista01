@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+
+<h:head></h:head> 
+<h:body> 
+
+	<h:form>	
+		<p:growl globalOnly="true"/>
+		
+		<p:panelGrid columns="3">
+		
+			<p:outputLabel for="m1" value="	valor1" />
+			<p:inputNumber id="m1" value="#{mediaBean.valor1}"/>
+			<p:message for="m1"/>
+			
+			<p:outputLabel for="m2" value="valor2" />
+			<p:inputNumber id="m2" value="#{mediaBean.valor2}"/>
+			<p:message for="m2"/>
+			
+			<p:outputLabel for="m3" value="valor3" />
+			<p:inputNumber id="m3" value="#{mediaBean.valor3}"/>
+			<p:message for="m3"/>
+			
+			
+		</p:panelGrid>
+	
+			<p:commandButton value="Calcular" action="#{mediaBean.calcular()}" update="@form"/>
+	</h:form>
+	
+</h:body>
+</html>

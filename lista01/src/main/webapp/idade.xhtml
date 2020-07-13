@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+	<title>Verifique sua Idade!</title>
+	<script type="text/javascript"
+		src="scripts/primefaces-calendar-ptbr.js" />
+</h:head>
+
+<h:body>
+
+	<h:form>
+
+		<p:messages globalOnly="true" />
+
+		<p:panel header="Verifique sua idade" style="width: 800px">
+
+			<p:panelGrid columns="3" styleClass="ui-panelgrid-blank">
+
+				<p:outputLabel for="nascimento" value="Data de nascimento:" />
+				<p:calendar id="nascimento" value="#{idadeBean.dataNascimento}"
+					pattern="dd/MM/yyyy" mask="99/99/9999" locale="pt" />
+				<p:message for="nascimento" />
+
+			</p:panelGrid>
+
+			<f:facet name="footer">
+				<p:commandButton value="Verificar" icon="fa fa-arrow-right"
+					action="#{idadeBean.verificarIdade()}" update="@form" />
+			</f:facet>
+
+		</p:panel>
+
+	</h:form>
+
+	<br />
+
+	<p:fieldset legend="Documentação">
+		<h1>Tecnologias</h1>
+		<ul>
+			<li>JDK 1.8</li>
+			<li>JSF 2.3</li>
+			<li>JPA 2.1</li>
+			<li>WildFly 18</li>
+			<li>PrimeFaces 8.0</li>
+			<li>PrimeFaces Extensions 8.0</li>
+			<li>OmniFaces 3.2</li>
+			<li>FontAwesome 5.2.2 (PrimeFaces provide)</li>
+			<li>JUnit 4.12</li>
+			<li>Bean Validation</li>
+			<li>CDI 2.0</li>
+			<li>EL 3.0</li>
+			<li>JEE 8.0</li>
+		</ul>
+
+	</p:fieldset>
+
+
+
+</h:body>
+</html>

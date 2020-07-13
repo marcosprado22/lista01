@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+
+<h:head></h:head> 
+<h:body> 
+	
+	<h:form>
+	
+		<p:growl globalOnly="true"/>
+		
+		<p:panelGrid columns="3">
+		
+			<p:outputLabel for="n1" value="x1" />
+			<p:inputNumber id="n1" value="#{distanciaBean.x1}"/>
+			<p:message for="n1"/>
+			
+			<p:outputLabel for="n2" value="y1" />
+			<p:inputNumber id="n2" value="#{distanciaBean.y1}"/>
+			<p:message for="n2"/>
+			
+			<p:outputLabel for="n3" value="x2" />
+			<p:inputNumber id="n3" value="#{distanciaBean.x2}"/>
+			<p:message for="n3"/>
+			
+			<p:outputLabel for="n4" value="y2" />
+			<p:inputNumber id="n4" value="#{distanciaBean.y2}"/>
+			<p:message for="n4"/>
+			
+		</p:panelGrid>
+	
+			<p:commandButton value="Calcular" action="#{distanciaBean.calcular()}" update="@form"/>
+	</h:form>
+	
+	
+</h:body> 
+</html>

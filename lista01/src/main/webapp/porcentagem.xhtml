@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"> 
+
+<h:head>
+
+</h:head> 
+<h:body> 
+
+	<h:form>	
+		<p:growl globalOnly="true"/>
+		
+		<p:panel header="Verifique o valor do acréscimo em porcentagem: " style="width: 800px">
+		<p:panelGrid columns="3">
+		
+			<p:outputLabel for="v1" value="Valor:" />
+			<p:inputNumber id="v1" value="#{porcentagemBean.valor}"/>
+			<p:message for="v1"/>
+			
+			<p:outputLabel for="a1" value="Acréscimo %: " />
+			<p:inputNumber id="a1" value="#{porcentagemBean.acrescimo}"/>
+			<p:message for="a1"/>
+			
+			
+			
+		</p:panelGrid>
+	
+			<p:commandButton value="Calcular" action="#{porcentagemBean.calcular()}" update="@form"/>
+			
+		</p:panel>
+	</h:form>
+	
+</h:body>
+</html>
